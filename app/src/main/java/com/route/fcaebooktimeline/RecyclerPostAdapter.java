@@ -14,48 +14,47 @@ import java.util.List;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 
-public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapter.ViewHolder> {
-    List<Story> stories;
+public class RecyclerPostAdapter extends RecyclerView.Adapter<RecyclerPostAdapter.ViewHolder> {
+    List<Post> posts;
 
-    public RecyclerViewAdapter(List<Story> stories) {
-        this.stories = stories;
+    public RecyclerPostAdapter(List<Post> posts) {
+        this.posts = posts;
     }
 
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View itemView = LayoutInflater.from(parent.getContext())
-                .inflate(R.layout.item_story, parent, false);
+                .inflate(R.layout.item_post, parent, false);
         return new ViewHolder(itemView);
     }
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        Story story = stories.get(position);
-            Log.e("Story", "adapter"+story);
-            holder.name.setText(story.username);
-            holder.profileImg.setImageResource(story.userProfileImage);
-            holder.storyImg.setImageResource(story.storyImage);
+        Post post = posts.get(position);
+        holder.name.setText(post.username);
+        holder.profileImg.setImageResource(post.profileImage);
+        holder.postImg.setImageResource(post.postImage);
     }
 
     @Override
     public int getItemCount() {
-        if (stories == null) return 0;
+        if (posts == null) return 0;
         else
-            return stories.size();
+            return posts.size();
     }
 
     static class ViewHolder extends RecyclerView.ViewHolder {
 
         TextView name;
         CircleImageView profileImg;
-        ImageView storyImg;
+        ImageView postImg;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
-            name = itemView.findViewById(R.id.tv_username);
-            profileImg = itemView.findViewById(R.id.cimv_profile);
-            storyImg = itemView.findViewById(R.id.imv_story);
+            name = itemView.findViewById(R.id.tv_user_name);
+            profileImg = itemView.findViewById(R.id.img_profile);
+            postImg = itemView.findViewById(R.id.imv_post_photo);
         }
     }
 }

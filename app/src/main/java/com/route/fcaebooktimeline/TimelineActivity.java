@@ -11,8 +11,12 @@ import java.util.List;
 public class TimelineActivity extends AppCompatActivity {
 
     List<Story> storiesList;
+    List<Post>postsList;
     RecyclerView storyRecycler;
     RecyclerViewAdapter adapter;
+
+    RecyclerView postRecycler;
+    RecyclerPostAdapter postAdapter;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -21,13 +25,24 @@ public class TimelineActivity extends AppCompatActivity {
         createStories();
         adapter = new RecyclerViewAdapter(storiesList);
         storyRecycler.setAdapter(adapter);
+        ///
+        postRecycler = findViewById(R.id.rv_post);
+        createPosts();
+        postAdapter = new RecyclerPostAdapter(postsList);
+        postRecycler.setAdapter((postAdapter));
+    }
+
+    private void createPosts() {
+        postsList = new ArrayList<>(10);
+        for(int i=0; i<10; i++){
+            postsList.add(new Post("Android", R.drawable.android_img, R.drawable.android_developer));
+        }
     }
 
     private void createStories() {
-        storiesList = new ArrayList<>(3);
-        storiesList.add(new Story(1, "Mei", R.drawable.penguin, R.drawable.nature));
-        storiesList.add(new Story(2, "Maha", R.drawable.img2, R.drawable.story2));
-        storiesList.add(new Story(3, "Farah", R.drawable.story2, R.drawable.img2));
-
+        storiesList = new ArrayList<>(10);
+       for(int i=0; i<10; i++){
+           storiesList.add(new Story(i, "Mei Habib", R.drawable.penguin, R.drawable.nature));
+       }
     }
 }

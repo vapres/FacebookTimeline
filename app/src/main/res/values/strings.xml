@@ -1,4 +1,13 @@
 <resources>
     <string name="app_name">FcaebookTimeline</string>
     <string name="story">story</string>
+    <string name="android">Android</string>
+    <string name="caption">Embarking on an exciting journey into the world of Android development! 🚀💻 Unlocking the potential of innovation and creativity one line of code at a time.\nhttps://www.android.com</string>
+    <string name="post_time">2 hrs •</string>
+    <string name="shares">3.7K shares</string>
+    <string name="likes">12K</string>
+    <string name="like">Like</string>
+    <string name="comment">Comment</string>
+    <string name="share">Share</string>
+
 </resources>

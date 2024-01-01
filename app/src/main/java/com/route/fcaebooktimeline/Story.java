@@ -12,4 +12,5 @@ public class Story {
         this.userProfileImage = userProfileImage;
         this.storyImage = storyImage;
     }
+
 }
