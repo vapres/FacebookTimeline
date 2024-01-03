@@ -23,7 +23,7 @@ class RecyclerPostAdapter(var posts: List<Post>?) : RecyclerView.Adapter<Recycle
     }
 
     override fun getItemCount(): Int {
-        return if (posts == null) 0 else posts!!.size
+        return posts?.size?:0
     }
 
     class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {

@@ -7,8 +7,8 @@ import java.util.ArrayList
 
 class TimelineActivity : AppCompatActivity() {
 
-    private var storiesList: List<Story>? = null
-    private var postsList: List<Post>? = null
+    lateinit var storiesList: List<Story>
+    lateinit var postsList: List<Post>
     private lateinit var storyRecycler: RecyclerView
     private lateinit var adapter: RecyclerViewAdapter
 
@@ -21,12 +21,12 @@ class TimelineActivity : AppCompatActivity() {
 
         storyRecycler = findViewById(R.id.rv_story)
         createStories()
-        adapter = RecyclerViewAdapter(storiesList!!)
+        adapter = RecyclerViewAdapter(storiesList)
         storyRecycler.adapter = adapter
 
         postRecycler = findViewById(R.id.rv_post)
         createPosts()
-        postAdapter = RecyclerPostAdapter(postsList!!)
+        postAdapter = RecyclerPostAdapter(postsList)
         postRecycler.adapter = postAdapter
     }
 

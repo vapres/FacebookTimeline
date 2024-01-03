@@ -25,7 +25,7 @@ class RecyclerViewAdapter(var stories: List<Story>?) : RecyclerView.Adapter<Recy
     }
 
     override fun getItemCount(): Int {
-        return if (stories == null) 0 else stories!!.size
+        return stories?.size?:0
     }
 
     class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
